@@ -5,17 +5,17 @@
 
 //Двигатель A
 int enA = 9;
-int in1 = 8;
-int in2 = 7;
+int in1 = 7;
+int in2 = 8;
 // Двигатель B
-int enB = 3;
+int enB = 5;
 int in3 = 4;
 
-int in4 = 5;
+int in4 = 3;
  
 void setup()
 {
-  Serial.begin(19200);
+  Serial.begin(19200);  
   pinMode(enA, OUTPUT);
   pinMode(enB, OUTPUT);
   pinMode(in1, OUTPUT);
@@ -28,8 +28,8 @@ void setup()
   digitalWrite(in4, LOW);
 
 
-  pinMode(pinX, INPUT);
-  pinMode(pinY, INPUT);
+ // pinMode(pinX, INPUT);
+  //pinMode(pinY, INPUT);
   
 
 
@@ -48,15 +48,15 @@ void loop()
   digitalWrite(in4, LOW);
 
 
-  int X = analogRead(pinX)/4;              // считываем значение оси Х
-  int Y = analogRead(pinY)/4;              // считываем значение оси Y
+  //int X = analogRead(pinX)/4;              // считываем значение оси Х
+  //int Y = analogRead(pinY)/4;              // считываем значение оси Y
 
-  analogWrite(enA, X); //  
-  analogWrite(enB, Y);
-  Serial.print(X);                       // выводим в Serial Monitor
+  analogWrite(enA, 100); //  
+  analogWrite(enB, 255);
+  //Serial.print(X);                       // выводим в Serial Monitor
   Serial.print("\t");                    // табуляция
-  Serial.println(Y);
+  //Serial.println(Y);
   
 
 }
-   
+
